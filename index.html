@@ -196,43 +196,32 @@
 <body>
 
     <div class="content">
-        <h1><I><B>HairStep</B></I>: Transfer Synthetic to Real Using Strand and Depth Maps for Single-View 3D Hair Modeling</h1>
+        <h1><I><B>UniHair</B></I>: A Unified Strategy for Braided and Un-braided 3D Hair Reconstruction from Single-view Images</h1>
         <p id="conference">
-	    <font size="+2">
-            	<B>CVPR 2023 <span style="color:red;">Highlight</span></B>
-	    </font>
+	    <!--<font size="+2">
+            	<B> cvpr <span style="color:red;"></span></B>
+	    </font>-->
         </p>
         <p id="authors">
-            <a href="https://paulyzheng.github.io/about/">Yujian Zheng</a><sup>1, 2</sup>
-            <a href="https://scholar.google.com/citations?user=6-ARg6AAAAAJ&hl=en">Zirong Jin</a><sup>2</sup>
-            <a href="https://scholar.google.com/citations?user=8pvT01UAAAAJ&hl=en">Moran Li</a><sup>3</sup>
-            <a href="https://brotherhuang.github.io/">Haibin Huang</a><sup>3</sup>
-            <a href="http://www.chongyangma.com/">Chongyang Ma</a><sup>3</sup>
-            <a href="https://sse.cuhk.edu.cn/en/faculty/cuishuguang">Shuguang Cui</a><sup>2, 1</sup>
-            <a href="https://gaplab.cuhk.edu.cn/">Xiaoguang Han</a><sup>2, 1</sup>*<br>
-            <!-- <strong>MIT Computer Science and Artificial Intelligence Laboratory</strong> -->
-            <sup>1</sup>FNii, CUHKSZ&nbsp;&nbsp;&nbsp;&nbsp;<sup>2</sup>SSE, CUHKSZ&nbsp;&nbsp;&nbsp;&nbsp;<sup>3</sup>Kuaishou Technology<br>
-	    *Corresponding author
+		Anonymous Submission
         </p>
 				<font size="+2">
 					<p style="text-align: center;">
-						<a href="https://arxiv.org/abs/2303.02700" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="https://youtu.be/WkG73DTSyUg" target="_blank">[Video]</a> &nbsp;&nbsp;&nbsp;&nbsp;
-						<!-- <a href="files/poster.pdf" target="_blank">[Poster]</a> &nbsp;&nbsp;&nbsp;&nbsp; -->
-						<!-- <a href="https://paulyzheng.github.io/research/hairstep/" target="_blank">[Code(coming soon)]</a> &nbsp;&nbsp;&nbsp;&nbsp; -->
-                        <a href="https://github.com/GAP-LAB-CUHK-SZ/HairStep" target="_blank">[Code and DataSet]</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="https://paulyzheng.github.io/about/files/hairstep_adobe_talk.pdf" target="_blank">[Slides]</a>
+						<a href="" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="" target="_blank">[Video]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="" target="_blank">[Code]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="" target="_blank">[DataSet]</a>
 					</p>
 					</font>
+
+
+	
         <p>
             <img class='teaser-img' src='img/teaser.jpg'></img>
         </p>
 
         <p>
-            Given a single portrait image, 
-            we first convert it to an intermediate representation <I>HairStep</I> consisting of a strand map and a depth map (shown in the bottom left and right for each example), 
-            and then recover the corresponding 3D hair model at the strand level. 
-            Our <I>HairStep</I> is capable to bridge the domain gap between synthetic and real data and achieves high-fidelity hair modeling results.
+            We proposed a novel strategy <I>UniHair</I> which enables single-view 3D hair reconstruction with rich textures and complicated shapes, working for braided and un-braided hairstyles through a unified pipeline. From left to right: input image, reconstructed 3D hair in 3D Gaussian representation and its rendered images from multiple views. Note that, our reconstruction is only for hair part and the underlying virtual avatar is just for visualization.
         </p>
 
         <br clear="all">
@@ -244,17 +233,12 @@
 					</p>
                 </font>
                 <p style="text-align: left;">
-                    In this work, we tackle the challenging problem of learning-based single-view 3D hair modeling. 
-                    Due to the great difficulty of collecting paired real image and 3D hair data, using synthetic data to provide prior knowledge for real domain becomes a leading solution. 
-                    This unfortunately introduces the challenge of domain gap. 
-                    Due to the inherent difficulty of realistic hair rendering, existing methods typically use orientation maps instead of hair images as input to bridge the gap. 
-                    We firmly think an intermediate representation is essential, but we argue that orientation map using the dominant filtering-based methods is sensitive to uncertain noise and far from a competent representation. 
-                    Thus, we first raise this issue up and propose a novel intermediate representation, termed as <I>HairStep</I>, which consists of a strand map and a depth map. 
-                    It is found that <I>HairStep</I> not only provides sufficient information for accurate 3D hair modeling, but also is feasible to be inferred from real images. 
-                    Specifically, we collect a dataset of 1,250 portrait images with two types of annotations. 
-                    A learning framework is further designed to transfer real images to the strand map and depth map. 
-                    It is noted that, an extra bonus of our new dataset is the first quantitative metric for 3D hair modeling. 
-                    Our experiments show that <I>HairStep</I> narrows the domain gap between synthetic and real and achieves state-of-the-art performance on single-view 3D hair reconstruction.
+                    Single-view 3D hair reconstruction is challenging, due to the wide range of shape variations among diverse hairstyles.
+Current state-of-the-art methods are specialized in recovering un-braided 3D hairs and often take braided styles as their failure cases, because of the inherent difficulty to define priors for complex hairstyles, whether rule-based or data-based. We propose <I>UniHair</I> to enable single-view 3D reconstruction for general hair types via a unified pipeline. 
+To achieve this, we first collect a large-scale synthetic multi-view hair dataset <I>SynMvHair</I> with diverse 3D hair in both braided and un-braided styles, and learn two diffusion priors specialized on hair.
+Then we optimize 3D Gaussian-based hair from the priors with two specially designed modules, i.e. view-wise and pixel-wise Gaussian refinement.
+Our experiments demonstrate that reconstructing braided and un-braided 3D hair from single-view images via a unified approach is possible and our method achieves the state-of-the-art performance in recovering complex hairstyles.
+It is worth to mention that our method shows good generalization ability to real images, although it learns hair priors from synthetic data.
                 </p>
 					
     </div>
@@ -265,41 +249,20 @@
 					</p>
                 </font>
                 <p style="text-align: center;">
-                <img src="img/highlight.png" width="100%">
-                </p>
-                <p style="text-align: left;">
-                    Overview of our approach. (a) The pipeline of single-view 3D hair modeling with our novel representation <I>HairStep</I>. 
-			We collect two datasets <I>HiSa</I> and <I>HiDa</I>, 
-			and propose effective approaches for <I>HairStep</I> extraction from real images and finally realize high-fidelity 3D hair strand reconstruction. 
-			(b) Domain-adaptive depth estimation. 
-			We first pre-train the Hourglass on synthetic dataset, 
-			then generate depth priors as pseudo labels and finally obtain reasonable hair depth weakly-supervised by depth prior and annotated relative depth. 
-			(c) Annotation of <I>HiSa</I> and <I>HiDa</I>.
+                <img src="img/pipeline.jpg" width="100%">
                 </p>
     </div>
-    <div class="content" id="comparison">
+    <!--<div class="content" id="comparison">
         <font size="+2">
             <p style="text-align: center;">
-                <B>Visual Comparisons</B>
+                <B>Visual Results</B>
             </p>
         </font>
         <p style="text-align: center;">
-        <img src="img/comparisons.jpg" width="100%">
+        <img src="img/visual.jpg" width="100%">
         </p>
     </div>
-    <div class="content" id="quantitative">
-        <font size="+2">
-            <p style="text-align: center;">
-                <B>Quantitative Comparisons</B>
-            </p>
-        </font>
-        <p style="text-align: center;">
-        <img src="img/quantitative.jpg" width="100%">
-        </p>
-        <p style="text-align: center;">
-            Our <I>HairStep</I> benefits different frameworks on both synthetic data (left table) and real data (right table).
-        </p>
-    </div>
+
     <div class="content" id="video">
         <font size="+2">
             <p style="text-align: center;">
@@ -307,7 +270,7 @@
             </p>
         </font>
         <p style="text-align: center;">
-            <iframe width="970" height="550" src="https://www.youtube.com/embed/WkG73DTSyUg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="970" height="550" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </p>
     </div>
     <div class="content" id="references">
@@ -316,12 +279,7 @@
 
         <code>
 
-	    @inproceedings{zheng2023hairstep,<br>
-            &nbsp;&nbsp;title={Hairstep: Transfer synthetic to real using strand and depth maps for single-view 3d hair modeling},<br>
-            &nbsp;&nbsp;author={Zheng, Yujian and Jin, Zirong and Li, Moran and Huang, Haibin and Ma, Chongyang and Cui, Shuguang and Han, Xiaoguang},<br>
-            &nbsp;&nbsp;booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},<br>
-	    &nbsp;&nbsp;pages={12726--12735},<br>
-            &nbsp;&nbsp;year={2023}<br>
+	    @inproceedings{
             }
         </code>
 
@@ -336,7 +294,7 @@
                   expressed or implied, of IARPA, DOI/IBC, or the U.S.
               </p>
               -->
-    </div>
+    </div>-->
 </body>
 
 </html>
